@@ -1,0 +1,24 @@
+{
+  "name": "brd-data",
+  "version": "1.0.0",
+  "description": "brddata development",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BRDDATA/brd-data.git"
+  },
+  "keywords": [
+    "brddata",
+    "brd",
+    "data"
+  ],
+  "author": "brddata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BRDDATA/brd-data/issues"
+  },
+  "homepage": "https://github.com/BRDDATA/brd-data"
+}
