@@ -1,0 +1,90 @@
+.navbar-brand img {
+    width: 180px;
+    height: 30px;
+}
+.navbar-default {
+	background-color: #ffffff;
+	border-bottom: 1px solid #199b97;
+}
+
+#bd-nav-bar-parent .navbar-nav a:hover,#bd-nav-bar-parent .navbar-nav .active a{
+	background: #edecec;
+    color: #02918d;
+    text-decoration: none;
+}
+#bd-nav-bar-parent .navbar-nav .active a:after,#bd-nav-bar-parent .navbar-nav li a:hover:after{
+	content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #02918d;
+}
+section{
+	margin-top: 50px;
+}
+/* Bootstrap override */
+ /* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .navbar-nav a{
+		font-size: 22px;
+	}
+	.navbar-nav li{
+		margin-left: 40px;
+	}
+	.navbar-nav li:first-child{
+		margin-left: 0;
+	}
+	.w90{
+		width: 90%;
+	}
+ }
+ @media (max-width: 768px) { 
+  .navbar-fixed-top{
+    position: relative;
+  }
+  .bd-carousel {
+		margin-top: 0;
+	}
+ }
+ .bd-portfolio a img{
+ 	width: 100%;
+    height: 150px;
+ }
+ .bd-portfolio .item{
+ 	text-align: center;
+ 	margin-bottom: 50px;
+ }
+ .bd-portfolio .bd-read-more{
+ 	display: inline-block;
+    padding: 4px 20px 3px;
+    font: 400 24px/30px 'Marvel', sans-serif;
+    color: #413d3d;
+    background: #f1f045;
+ }
+.bd-portfolio .bd-read-more:hover {
+  color: #ffffff;
+  background: #249f9c;
+  text-decoration: none;
+}
+footer{
+	background-color: #129894;
+	color: #a0d6d4;
+}
+footer a,footer a:hover{
+	color: #a0d6d4;
+}
+footer p{
+	padding: 23px 0 14px;
+}
+.bd-pull-right{
+	float: right;
+}
+.bd-social-icons {
+  font-size: 1.2em;  
+}
+.bd-social-icons:hover,.bd-social-icons:active,.bd-social-icons:focus{
+  text-decoration: none;
+  color: #fff;
+}
