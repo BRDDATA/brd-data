@@ -1,3 +1,6 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
 .navbar-brand img {
     width: 180px;
     height: 30px;
@@ -7,13 +10,13 @@
 	border-bottom: 1px solid #199b97;
 }
 
-#bd-nav-bar-parent .navbar-nav a:hover,#bd-nav-bar-parent .navbar-nav .active a{
+ .navbar-default .navbar-nav > li > a:hover,  .navbar-default .navbar-nav > li.active >  a{
 	background: #edecec;
     color: #02918d;
     text-decoration: none;
 }
-#bd-nav-bar-parent .navbar-nav .active a:after,#bd-nav-bar-parent .navbar-nav li a:hover:after{
-	content: '';
+ .navbar-default .navbar-nav > li.active > a:after,  .navbar-default .navbar-nav > li > a:hover:after{
+	 content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -27,13 +30,13 @@ section{
 /* Bootstrap override */
  /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-  .navbar-nav a{
+  .navbar-default .navbar-nav a{
 		font-size: 22px;
 	}
-	.navbar-nav li{
+	.navbar-default .navbar-nav > li{
 		margin-left: 40px;
 	}
-	.navbar-nav li:first-child{
+	.navbar-default .navbar-nav > li:first-child{
 		margin-left: 0;
 	}
 	.w90{
@@ -62,11 +65,18 @@ section{
     font: 400 24px/30px 'Marvel', sans-serif;
     color: #413d3d;
     background: #f1f045;
- }
+ } 
 .bd-portfolio .bd-read-more:hover {
   color: #ffffff;
   background: #249f9c;
   text-decoration: none;
+}
+.navbar-default .navbar-nav > li .dropdown-menu{
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > li.dropdown li a:hover{
+  background-color: #249f9c;  
+  color: #ffffff;
 }
 footer{
 	background-color: #129894;
@@ -87,4 +97,19 @@ footer p{
 .bd-social-icons:hover,.bd-social-icons:active,.bd-social-icons:focus{
   text-decoration: none;
   color: #fff;
+}
+/************************************************************/
+/***********Common Button Styling****************************/
+/***********************************************************/
+.bd-btn {
+    display: inline-block;
+    padding: 4px 20px 3px;
+    font: 400 24px/30px 'Marvel', sans-serif;
+    color: #413d3d;
+    background: #f1f045;
+ }
+.bd-btn:hover {
+  color: #ffffff;
+  background: #249f9c;
+  text-decoration: none;
 }
