@@ -1,11 +1,30 @@
-var express = require('express');
+var express = require('express'),
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser');
+
+
+var db;
+
+db= mongoose.connect('mongodb://localhost/brd-data');
+
+
+var Contact = require('./models/contactModel');
+
 var app = express();
+
+var port = process.env.PORT || 8000;
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+contactRouter = require('./routes/contactRoutes')(Contact);
 
 app.use('/', express.static(__dirname + '/'));
 
-var server = app.listen(8000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
+app.use('/api/contacts', contactRouter); 
 
-  console.log('Example app listening at http://%s:%s', host, port);
+app.listen(port, function(){
+    console.log('Gulp is running my app on  PORT: ' + port);
 });
+
+module.exports = app;
