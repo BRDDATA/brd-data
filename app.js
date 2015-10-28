@@ -2,7 +2,6 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
-
 var db;
 
 db= mongoose.connect('mongodb://localhost/brd-data');

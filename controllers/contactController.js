@@ -1,3 +1,7 @@
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport();
+
 var contactController = function(Contact){
 
     var post = function(req, res){
@@ -10,7 +14,31 @@ var contactController = function(Contact){
         else {
             contact.save();
             res.status(201);
-            res.send(contact);
+            //res.send(contact);
+            transporter.sendMail({
+                from : req.body.email,
+                to : 'test@mailinator.com',
+                subject : req.body.name + ' : ' + req.body.phone,
+                text : req.body.message
+            }, function(error, response){
+                  if(error){
+                      //res.send(error);
+                  }else{
+                      //res.send("Message sent successfully");
+                  }
+            });
+            transporter.sendMail({
+                from : 'test@mailinator.com',
+                to : req.body.email,
+                subject : 'Thanks for your message',
+                text : 'We have received your message and working on it.'
+            }, function(error, response){
+                  if(error){
+                      res.send(error);
+                  }else{
+                      res.send("Message sent successfully");
+                  }
+            });
         }
     }
 
