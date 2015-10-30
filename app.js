@@ -11,7 +11,7 @@ var Contact = require('./models/contactModel');
 
 var app = express();
 
-var port = process.env.PORT || 8000;
+var port = 8000;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -23,7 +23,7 @@ app.use('/', express.static(__dirname + '/'));
 app.use('/api/contacts', contactRouter); 
 
 app.listen(port, function(){
-    console.log('Gulp is running my app on  PORT: ' + port);
+    console.log('Running my app on  PORT: ' + port);
 });
 
 module.exports = app;

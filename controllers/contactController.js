@@ -1,6 +1,18 @@
+var hbs = require('nodemailer-express-handlebars');
 var nodemailer = require('nodemailer');
-
 var transporter = nodemailer.createTransport();
+
+/*var options = {
+     viewEngine: {
+         extname: '.hbs',
+         layoutsDir: 'emails/layout',
+         defaultLayout : 'template',
+         partialsDir : 'emails/partials/'
+     },
+     viewPath: 'emails',
+     extName: '.hbs'
+};
+transporter.use('compile', hbs(options));*/
 
 var contactController = function(Contact){
 
@@ -15,6 +27,23 @@ var contactController = function(Contact){
             contact.save();
             res.status(201);
             //res.send(contact);
+            
+            /*transporter.sendMail({
+                from : req.body.email,
+                to : 'test@mailinator.com',
+                subject : req.body.name + ' : ' + req.body.phone,
+                template: 'template',
+                 context: {
+                      variable1 : 'value1',
+                      variable2 : 'value2'
+                 }
+            }, function(error, response){
+                  if(error){
+                      res.send(error);
+                  }else{
+                      res.send("Message sent successfully");
+                  }
+            });*/
             transporter.sendMail({
                 from : req.body.email,
                 to : 'test@mailinator.com',
