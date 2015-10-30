@@ -20,7 +20,7 @@ $(window).load(function(){
 					,responseMessageClass:'response-message'
 					,processingClass:'processing'
 					,onceVerifiedClass:'once-verified'
-					,mailHandlerURL:'mail/MailHandler.php'					
+					,mailHandlerURL:'api/contacts'					
 					,successShowDelay:'4000'
 					,stripHTML:true
 					,recaptchaPublicKey:''
@@ -167,8 +167,8 @@ $(window).load(function(){
 				if(!$('label.'+opt.invalidClass+',label.'+opt.emptyClass,form).length&&!form.hasClass(opt.processingClass)){
 					form.addClass(opt.processingClass)
 					$this.ajaxSubmit(function(e,d,a,c){
-						responseMessage=e
-						if(e=='success'){							
+						responseMessage=d
+						if(d=='success'){							
 							form
 								.removeClass(opt.processingClass)
 								.addClass(opt.successClass)

@@ -112,7 +112,7 @@
 #contact-form .error-message {
   position: absolute;
   right: 3px;
-  top: 2px;
+  top: -18px;
   color: red;
   height: 0;
   overflow: hidden;
