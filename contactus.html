@@ -119,6 +119,11 @@
                                         <span class="empty-message">*This field is required.</span>
                                         <span class="error-message">*The message is too short.</span>
                                     </label>
+                                    <label class="recaptcha">
+                                      <div class="g-recaptcha" data-sitekey="6Le0EBATAAAAAK8Nqp2u3Ab8o64yLfIRp-BHLzC1"></div>
+                                      <span class="error-message">*Please verify captcha.</span>
+                                      <span class="empty-message">*Please verify captcha.</span>
+                                    </label>
                                     <div class="btn-wrap">
                                         <a class="btn_3" href="#" data-type="reset">clear</a>
                                         <a class="btn_3" href="#" data-type="submit">send</a>
@@ -165,9 +170,21 @@
 <script src="js/bootstrap.min.js"></script>
 <script src='js/modal.js'></script>
 <script src='js/TMForm.js'></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript">
   $(document).ready(function(){
-    
+    setTimeout(function(){
+    var area = document.getElementById('g-recaptcha-response');
+    if (area.addEventListener) {
+      area.addEventListener('input', function() {
+        $('label.recaptcha').removeClass('empty');
+      }, false);
+    } else if (area.attachEvent) {
+      area.attachEvent('onpropertychange', function() {
+        $('label.recaptcha').removeClass('empty');
+      });
+    }
+  }, 2000)
   });
 </script>
 </body>

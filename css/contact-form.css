@@ -18,7 +18,6 @@
   max-width: 100%;
   margin-left: 0;
   width: 100%;
-  margin-bottom: 39px;
 }
 #contact-form fieldset {
   border: none;
@@ -79,6 +78,9 @@
 #contact-form .btn-wrap {
   text-align: right;
   letter-spacing: normal;
+  clear: both;
+  padding-top: 30px;
+}
 }
 #contact-form .btn-wrap .btn_3 {
   margin-left: 5px;
@@ -308,4 +310,10 @@ a {
 }
 .mrgBtm20px {
   margin-bottom: 20px;
+}
+#contact-form label.recaptcha {
+  max-width: inherit;
+}
+.g-recaptcha {
+  float: right;
 }

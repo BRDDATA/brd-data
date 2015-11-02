@@ -1,7 +1,7 @@
 //TMForm 1.0.1
 $(window).load(function(){
 	$('#contact-form').TMForm({
-		recaptchaPublicKey:'6LeZwukSAAAAAG8HbIAE0XeNvCon_cXThgu9afkj'		
+		recaptchaPublicKey:'6Le0EBATAAAAAK8Nqp2u3Ab8o64yLfIRp-BHLzC1'		
 	})
 })
 
@@ -155,13 +155,12 @@ $(window).load(function(){
 
 				modal.on('hidden.bs.modal',function(){
 					if(responseMessage!=='success')
-						$('#recaptcha_reload',form).click()
-						,$('#recaptcha_response_field',form).focus()						
+						grecaptcha.reset();						
 				})
 
 				$('[data-constraints]',form).trigger('validate.form')
 
-				if($('#recaptcha_response_field',form).val()==='')
+				if($('#g-recaptcha-response',form).val()==='')
 					$('label.recaptcha',form).addClass(opt.emptyClass)
 				
 				if(!$('label.'+opt.invalidClass+',label.'+opt.emptyClass,form).length&&!form.hasClass(opt.processingClass)){
@@ -189,7 +188,7 @@ $(window).load(function(){
 								.removeClass(opt.processingClass)
 								.addClass(opt.responseErrorClass)
 
-							$('#recaptcha_response_field',form).val('')
+							$('#g-recaptcha-response',form).val('')
 
 							setTimeout(function(){
 								form
@@ -204,7 +203,10 @@ $(window).load(function(){
 			}
 			
 			function formReset(){
-				fieldDesolation($('[data-constraints]',form))					
+				grecaptcha.reset();
+				$('label.recaptcha',form).removeClass('empty');
+				fieldDesolation($('[data-constraints]',form));
+
 			}
 
 			function showRecaptcha(){
@@ -220,8 +222,8 @@ $(window).load(function(){
 				)
 
 				form					
-					.on('focus','#recaptcha_response_field',function(){
-						$(this).parents('label').removeClass(opt.emptyClass)						
+					.on('focus',function(){
+						$(this).find('label.recaptcha').removeClass(opt.emptyClass)						
 					})
 			}
 		}
