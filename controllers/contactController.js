@@ -2,6 +2,35 @@ var hbs = require('nodemailer-express-handlebars');
 var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport();
 
+var transporter = nodemailer.createTransport("SMTP", {
+  service: "Gmail",
+  auth: {
+    XOAuth2: {
+      user: "sivakrishnangceb@gmail.com", // Your gmail address.
+                                            // Not @developer.gserviceaccount.com
+      clientId: "521879207655-daqhmbjkpmpdh9928ng527228pjj900j.apps.googleusercontent.com",
+      clientSecret: "LaiT8Yqg9tGpSVOCsV0CWTQv",
+      refreshToken: "1/2eRySdx6oxw8TRqfh4U5OvrHhXj_VoxRzdrcXn4gwiFIgOrJDtdun6zK6XiATCKT"
+    }
+  }
+});
+
+/*var mailOptions = {
+  from: "sivakrishnangceb@gmail.com",
+  to: "sivakrishnan@live.com",
+  subject: "Hello",
+  generateTextFromHTML: true,
+  html: "<b>Hello world</b>"
+};*/
+
+/*transporter.sendMail(mailOptions, function(error, response) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(response);
+  }
+  transporter.close();
+});*/
 /*var options = {
      viewEngine: {
          extname: '.hbs',
