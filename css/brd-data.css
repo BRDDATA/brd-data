@@ -31,10 +31,10 @@ section{
  /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
   .navbar-default .navbar-nav a{
-		font-size: 22px;
+		font-size: 16px;
 	}
 	.navbar-default .navbar-nav > li{
-		margin-left: 40px;
+		margin-left: 20px;
 	}
 	.navbar-default .navbar-nav > li:first-child{
 		margin-left: 0;
