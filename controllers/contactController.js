@@ -1,19 +1,55 @@
-var hbs = require('nodemailer-express-handlebars');
-var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport();
+
+
+//var nodemailer = require('nodemailer');
+//var hbs = require('nodemailer-express-handlebars');
+var adminEmail = "dan@brddata.com";
+var ccEmail = "bharath@brddata.com";
+var testEmail ="brddatatest@gmail.com";
+var ccTestEmail ="sivakrishnangceb@gmail.com";
+//var transporter = nodemailer.createTransport();
+
+var path           = require('path')
+  , templatesDir   = path.join(__dirname, 'templates')
+  , emailTemplates = require('email-templates')
+  ,nodemailer = require('nodemailer');
+
+
+/*var options = {
+     viewEngine: {
+         extname: '.hbs',
+         layoutsDir: 'emails/layout',
+         defaultLayout : 'template',
+         partialsDir : 'emails/partials/'
+     },
+     viewPath: 'emails/layout',
+     extName: '.hbs'
+};*/
 
 var transporter = nodemailer.createTransport("SMTP", {
   service: "Gmail",
   auth: {
     XOAuth2: {
-      user: "sivakrishnangceb@gmail.com", // Your gmail address.
+      user: "brddatatest@gmail.com", // Your gmail address.
                                             // Not @developer.gserviceaccount.com
-      clientId: "521879207655-daqhmbjkpmpdh9928ng527228pjj900j.apps.googleusercontent.com",
-      clientSecret: "LaiT8Yqg9tGpSVOCsV0CWTQv",
-      refreshToken: "1/2eRySdx6oxw8TRqfh4U5OvrHhXj_VoxRzdrcXn4gwiFIgOrJDtdun6zK6XiATCKT"
+      clientId: "904735654699-je466p4rmr6hjuvs5e1kghltdococnbn.apps.googleusercontent.com",
+      clientSecret: "3sSIPkAhyxdHa7sGDEtys8TJ",
+      refreshToken: "1/eBiFNZHbOInfdHkEm62NpW3x5wR0uFJpr64tjAuzNTBIgOrJDtdun6zK6XiATCKT"
     }
   }
 });
+/*transporter.use('compile', hbs(options));
+transporter.sendMail({
+    to : ccTestEmail,
+    subject : 'testing',
+}, function(error, response){
+      if(error){
+          res.send(error);
+      }else{
+          res.send("Message sent successfully");
+      }
+});*/
+
+
 
 /*var mailOptions = {
   from: "sivakrishnangceb@gmail.com",
@@ -31,17 +67,6 @@ var transporter = nodemailer.createTransport("SMTP", {
   }
   transporter.close();
 });*/
-/*var options = {
-     viewEngine: {
-         extname: '.hbs',
-         layoutsDir: 'emails/layout',
-         defaultLayout : 'template',
-         partialsDir : 'emails/partials/'
-     },
-     viewPath: 'emails',
-     extName: '.hbs'
-};
-transporter.use('compile', hbs(options));*/
 
 var contactController = function(Contact){
 
@@ -56,26 +81,9 @@ var contactController = function(Contact){
             contact.save();
             res.status(201);
             //res.send(contact);
-            
-            /*transporter.sendMail({
-                from : req.body.email,
-                to : 'test@mailinator.com',
-                subject : req.body.name + ' : ' + req.body.phone,
-                template: 'template',
-                 context: {
-                      variable1 : 'value1',
-                      variable2 : 'value2'
-                 }
-            }, function(error, response){
-                  if(error){
-                      res.send(error);
-                  }else{
-                      res.send("Message sent successfully");
-                  }
-            });*/
             transporter.sendMail({
-                from : req.body.email,
-                to : 'test@mailinator.com',
+                to : testEmail,
+                cc : ccTestEmail,
                 subject : req.body.name + ' : ' + req.body.phone,
                 text : req.body.message
             }, function(error, response){
@@ -86,7 +94,6 @@ var contactController = function(Contact){
                   }
             });
             transporter.sendMail({
-                from : 'test@mailinator.com',
                 to : req.body.email,
                 subject : 'Thanks for your message',
                 text : 'We have received your message and working on it.'
