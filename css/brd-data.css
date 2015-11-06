@@ -114,3 +114,27 @@ footer p{
   text-decoration: none;
 }
 .minHt{min-height:500px}
+.icon-circle{
+  display: inline-block;
+  width: 117px;
+  height: 117px;
+  color: #01918c;
+  border: 1px solid #199b97;
+  text-align: center;
+  border-radius: 100px;
+}
+.icon-font{
+	font:700 48px/117px 'FontAwesome';
+}
+.icon-chart:before{
+	content:"\f080";
+}
+.icon-cloud:before{
+	content:"\f0c2";
+}
+.icon-industry:before{
+	content:"\f275"
+}
+.icon-user:before{
+	content:"\f007"
+}
