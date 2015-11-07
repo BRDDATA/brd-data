@@ -114,7 +114,7 @@ footer p{
   text-decoration: none;
 }
 .minHt{min-height:500px}
-<<<<<<< HEAD
+
 .icon-circle{
   display: inline-block;
   width: 117px;
@@ -139,7 +139,7 @@ footer p{
 .icon-user:before{
 	content:"\f007"
 }
-=======
+
 
 .dropdown:hover .dropdown-menu {    
     display: block; 
@@ -162,4 +162,37 @@ footer p{
    margin: 0 10px;  
    color: #02918d; 
  }
->>>>>>> Breadcrumb added.
+  .bd-breadcrumb li i.fa-home {
+   margin: 0;  
+   color: #02918d; 
+ }
+ .bd-subcontent {
+  font-size: 17px;
+  font-weight: normal;
+ }
+ .bd-subcontent .bd-subheader {
+  text-align: center;
+  font-size: 48px;
+  color: #129894;
+ }
+.bd-subcontent p {
+  text-indent: 100px;  
+}
+.bd-social-icons {
+  text-align: center;
+}
+.bd-social-icons a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    background: #dcd9d9;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 25px;
+    line-height: 56px;
+}
+.bd-social-icons a:hover {
+  background: #129894;
+  text-decoration: none;
+}
