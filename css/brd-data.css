@@ -114,6 +114,7 @@ footer p{
   text-decoration: none;
 }
 .minHt{min-height:500px}
+<<<<<<< HEAD
 .icon-circle{
   display: inline-block;
   width: 117px;
@@ -138,3 +139,27 @@ footer p{
 .icon-user:before{
 	content:"\f007"
 }
+=======
+
+.dropdown:hover .dropdown-menu {    
+    display: block; 
+    margin-top: 0; // remove the gap so it doesn't close
+   
+ }
+ .bd-breadcrumb {
+  
+  padding: 10px 0;
+ }
+ .bd-breadcrumb a { 
+    color: #337ab7;
+ }
+ .bd-breadcrumb li {
+  list-style-type: none;
+  display: inline-block;
+ 
+ }
+  .bd-breadcrumb li i.fa {
+   margin: 0 10px;  
+   color: #02918d; 
+ }
+>>>>>>> Breadcrumb added.
