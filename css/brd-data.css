@@ -27,6 +27,37 @@ body{
 section{
 	margin-top: 50px;
 }
+.bd-prev,.bd-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -41px;
+    width: 82px;
+    height: 82px;
+    color: #232222;
+    background: #d4d8d8;
+    text-align: center;
+    font: 400 72px/80px 'FontAwesome';
+    cursor: pointer;
+    border-radius: 41px;
+    -webkit-transition: 0.3s color ease;
+    transition: 0.3s color ease;
+    z-index: 10;
+}
+.bd-prev:before{
+    padding-right: 10px;
+    content: '\f104';
+}
+.bd-next:before{
+    padding-left: 10px;
+    content: '\f105';
+}
+.bd-prev:hover,
+.bd-next:hover {
+  color: #249f9c;
+}
+.bd-next {
+    right: 67px;
+}
 /* Bootstrap override */
  /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
@@ -50,6 +81,32 @@ section{
   .bd-carousel {
 		margin-top: 0;
 	}
+  .bd-prev,.bd-next{
+    margin-top: -20.5px;
+    width: 41px;
+    height: 41px;
+    color: #232222;
+    background: #d4d8d8;
+    text-align: center;
+    font: 400 36px/40px 'FontAwesome';
+    cursor: pointer;
+    border-radius: 41px;
+    -webkit-transition: 0.3s color ease;
+    transition: 0.3s color ease;
+    z-index: 10;
+  }
+  .bd-prev {    
+    left: 34px;
+  }
+  .bd-next {
+      right: 33.5px;
+  }
+  .bd-prev:before{
+    padding-right: 5px;
+  }
+  .bd-next:before{
+      padding-left: 5px;
+  }
  }
  .bd-portfolio a img{
  	width: 100%;
