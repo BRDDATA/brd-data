@@ -1,235 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="bd">
 <head>
-    <title>Services</title>
-    <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no"/>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/isotope.css"/>
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-migrate-1.2.1.js"></script>
-    <script src="js/jquery.equalheights.js"></script>
-    <script src='js/isotope.min.js'></script>
-    <!--[if lt IE 9]>
-    <div style=' clear: both; text-align:center; position: relative;'>
-        <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-            <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0"
-                 height="42" width="820"
-                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
-        </a>
-    </div>
-    <script src="js/html5shiv.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
-    <![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <meta charset="utf-8">    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/brd-data.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular.uirouter.js"></script>
+    <script src="js/services.js"></script>
 </head>
 <body>
-<div class="page">
-<!--========================================================
-                          HEADER
-=========================================================-->
-<header id="header">
-    <div id="stuck_container">
-        <div class="container">
-            <div class="row">
-                <div class="grid_12">
-                    <div class="brand put-left">
-                        <h1>
-                            <a href="index.html">
-                                <img src="images/logo.png" alt="Logo"/>
-                            </a>
-                        </h1>
-                    </div>
-                    <nav class="nav put-right">
-                        <ul class="sf-menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li>
-                                <a href="about.html">About</a>
-                                <ul>
-                                    <li><a href="#">Lorem ipsum</a></li>
-                                    <li><a href="#">Dolor sit amet</a>
-                                    <li><a href="#">Ctetur adipisicing</a>
-                                    <li><a href="#">Elit sed do</a>
-                                        <ul>
-                                            <li><a href="#">Iusmod tempor</a></li>
-                                            <li><a href="#">Incididunt ut labore</a></li>
-                                            <li><a href="#">Et dolore magna</a></li>
-                                            <li><a href="#">Aliqua Ut enim</a></li>
-                                            <li><a href="#">Minim veniam</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="current"><a href="services.html">Services</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+    <header>  
+    <nav class="navbar navbar-default navbar-fixed-top" id="bd-nav-bar-parent">      
+      <div class="container-fluid w90">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bd-nav-bar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="javascript:void(0)">
+            <img alt="logo" src="images/brd_logo.png">
+          </a>
         </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bd-nav-bar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="index.html">Home </a>
+            </li>          
+             <li class="dropdown active">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Services
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/business-intelligence">Business Intelligence</a></li>
+                <li><a href="#/data-warehousing">Data warehousing</a></li>
+                <li><a href="#/cloud">Cloud</a></li> 
+              </ul>
+            </li>            
+            <li>
+                <a href="products.html">Products </a>
+            </li>  
+            <li>
+                <a href="aboutus.html">About Us</a>
+            </li>   
+            <li><a href="contactus.html">Contact Us </a></li>
+          </ul>
+          </div>
+      </div>
+    </nav>
+  </header>
+  <section class="container-fluid w90">
+    <div class="minHt">
+      <ul class="bd-breadcrumb">
+        <li><a href="index.html"><i class="fa fa-home"></i> Home <i class="fa fa-angle-right"></i></a></li>
+        <li><a href="#/business-intelligence">Services<i class="fa fa-angle-right"></i></a></li>
+        <li class="active">Business Intelligence</li>
+      </ul>
+      <div ui-view></div>
     </div>
-</header>
-<!--========================================================
-                          CONTENT
-=========================================================-->
-<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - September08, 2014!</div>
-    <div class="container">
-        <div class="row wrap_11 wrap_20">
-            <div class="grid_12">
-                <div class="text_7 color_2">
-                    Categories:
-                    <ul id="filters">
-                        <li><a href="#" data-filter="*">Show All</a></li>
-                        <li><a href="#" data-filter="c1">Category 1</a></li>
-                        <li><a href="#" data-filter="c2">Category 2</a></li>
-                        <li><a href="#" data-filter="c3">Category 3</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg_1 wrap_17">
-        <div class="container">
-            <div class="row">
-                <div class="grid_12">
-                    <div class="isotope row">
-                        <div class="element-item grid_4 c1">
-                            <div class="box_7">
-                                <div class="img-wrap">
-                                    <img src="images/index-2_img01.jpg" alt="Image 1"/>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text_2 color_2"><a href="#">Tertomino verto</a></h3>
-                                    <p class="text_3">
-                                        Horem ipsum dolor sit amettetur ing elit. In mollis erat mattis neque
-                                        cilisis, sit amet <br/>
-                                        ultries wertolio dasererat rutrume. In mollis erat mattis
-                                        neque cilisis, sit amet ultries
-                                    </p>
-                                    <a class="btn_2" href="#">read more</a></div>
-                            </div>
-                        </div>
-                        <div class="element-item grid_4 c1">
-                            <div class="box_7">
-                                <div class="img-wrap">
-                                    <img src="images/index-2_img02.jpg" alt="Image 2"/>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text_2 color_2"><a href="#">Dertomino vertom</a></h3>
-                                    <p class="text_3">
-                                        Gorem ipsum dolor sit amettetur ing elit. In mollis erat mattis neque
-                                        cilisis, sit amet <br/>
-                                        ultries wertolio dasererat rutrume. In mollis erat mattis
-                                        neque cilisis, sit amet ultrie
-                                    </p>
-                                    <a class="btn_2" href="#">read more</a></div>
-                            </div>
-                        </div>
-                        <div class="element-item grid_4 c1">
-                            <div class="box_7">
-                                <div class="img-wrap">
-                                    <img src="images/index-2_img03.jpg" alt="Image 3"/>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text_2 color_2"><a href="#">Kertomino vertu</a></h3>
-                                    <p class="text_3">
-                                        Lorem ipsum dolor sit amettetur ing elit. In mollis erat mattis neque
-                                        cilisis, sit amet <br/>
-                                        ultries wertolio dasererat rutrume. In mollis erat mattis
-                                        neque cilisis, sit amet ultesas
-                                    </p>
-                                    <a class="btn_2" href="#">read more</a></div>
-                            </div>
-                        </div>
-                        <div class="element-item grid_4 c2">
-                            <div class="box_7">
-                                <div class="img-wrap">
-                                    <img src="images/index-2_img04.jpg" alt="Image 4"/>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text_2 color_2"><a href="#">Hertomino ertoq</a></h3>
-                                    <p class="text_3">
-                                        Horem ipsum dolor sit amettetur ing elit. In mollis erat mattis neque
-                                        cilisis, sit amet <br/>
-                                        ultries wertolio dasererat rutrume. In mollis erat mattis
-                                        neque cilisis, sit amet ultries
-                                    </p>
-                                    <a class="btn_2" href="#">read more</a></div>
-                            </div>
-                        </div>
-                        <div class="element-item grid_4 c2">
-                            <div class="box_7">
-                                <div class="img-wrap">
-                                    <img src="images/index-2_img05.jpg" alt="Image 5"/>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text_2 color_2"><a href="#">Tertomino verto</a></h3>
-                                    <p class="text_3">
-                                        Forem ipsum dolor sit amettetur ing elit. In mollis erat mattis neque
-                                        cilisis, sit amet <br/>
-                                        ultries wertolio dasererat rutrume. In mollis erat mattis
-                                        neque cilisis, sit amet ultries
-                                    </p>
-                                    <a class="btn_2" href="#">read more</a></div>
-                            </div>
-                        </div>
-                        <div class="element-item grid_4 c3">
-                            <div class="box_7">
-                                <div class="img-wrap">
-                                    <img src="images/index-2_img06.jpg" alt="Image 6"/>
-                                </div>
-                                <div class="caption">
-                                    <h3 class="text_2 color_2"><a href="#">Nertomino rtoas</a></h3>
-                                    <p class="text_3">
-                                        Korem ipsum dolor sit amettetur ing elit. In mollis erat mattis neque cilisis,
-                                        sit amet <br/>
-                                        ultries wertolio dasererat rutrume. In mollis erat mattis neque
-                                        cilisis, sit amet ultriede
-                                    </p>
-                                    <a class="btn_2" href="#">read more</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row wrap_9 wrap_4 wrap_10">
-            <div class="grid_12">
-                <div class="header_1 wrap_3 color_3">
-                    Get in Touch
-                </div>
-                <div class="box_3">
-                    <ul class="list_1">
-                        <li><a class="fa fa-twitter" href="#"></a></li>
-                        <li><a class="fa fa-facebook" href="#"></a></li>
-                        <li><a class="fa fa-google-plus" href="#"></a></li>
-                        <li><a class="fa fa-pinterest" href="#"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</div>
-<!--========================================================
-                          FOOTER
-=========================================================-->
-<footer id="footer" class="color_9">
-    <div class="container">
-        <div class="row">
-            <div class="grid_12">
-                <p class="info text_4 color_4">
-                    © <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <br/>
-                    Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="js/script.js"></script>
+  </section>
+  
+  
+  <footer>
+      <div class="container-fluid w90">
+          <p >
+            © <span id="bd-copyright-year">2015</span> | <a href="#">Privacy Policy</a> 
+            <span  class="bd-pull-right">
+                <a href="javascript:void(0)" class="bd-social-icons">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="javascript:void(0)" class="bd-social-icons">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="javascript:void(0)" class="bd-social-icons">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </span>
+
+           </p>
+      </div>
+  </footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
