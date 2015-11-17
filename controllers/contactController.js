@@ -10,7 +10,7 @@ var ccTestEmail ="sivakrishnangceb@gmail.com";
 
 var path           = require('path')
   , templatesDir   = path.join(__dirname, 'templates')
-  , emailTemplates = require('email-templates')
+  //, emailTemplates = require('email-templates')
   ,nodemailer = require('nodemailer');
 
 
