@@ -226,14 +226,20 @@ footer p{
  .bd-subcontent {
   font-size: 17px;
   font-weight: normal;
+  padding: 82px 0;
  }
  .bd-subcontent .bd-subheader {
   text-align: center;
   font-size: 48px;
   color: #129894;
+  padding-bottom: 48px;
  }
 .bd-subcontent p {
-  text-indent: 100px;  
+  text-indent: 100px;
+  padding: 0 10%;  
+}
+.bd-subcontent.bd-even {  
+  background: #fdfdfc;
 }
 .bd-social-icons {
   text-align: center;
