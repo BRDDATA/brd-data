@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <meta charset="utf-8">    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/brd-data.css">
+    <link rel="stylesheet" href="css/contact-form.css">
+</head>
+<body>
+    <header>  
+    <nav class="navbar navbar-default navbar-fixed-top" id="bd-nav-bar-parent">      
+      <div class="container-fluid w90">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bd-nav-bar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="javascript:void(0)">
+            <img alt="logo" src="images/brd_logo.png">
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bd-nav-bar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="index.html">Home </a>
+            </li>          
+             <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Services
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="services.html#/business-intelligence">Business Intelligence</a></li>
+                <li><a href="services.html#/data-warehousing">Data warehousing</a></li>
+                <li><a href="services.html#/cloud">Cloud</a></li> 
+              </ul>
+            </li>            
+             <li>
+                <a href="products.html">Products </a>
+            </li>  
+            <li>
+                <a href="aboutus.html">About Us</a>
+            </li>  
+            <li class="active"><a href="contactus.html">Contact Us </a></li>
+          </ul>
+          </div>
+      </div>
+    </nav>
+  </header>
+
+  
+  <section class="container-fluid w90 mrgBtm20px">
+      <div class="row">
+          <div class="col-sm-12">
+              <h2 class="header_2 indent_4">Find Us</h2>
+          </div>
+          <div class="col-sm-12">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d68639.07373862632!2d-94.35924139551433!3d38.91596412307219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c11f9639ebe8f7%3A0x9ed5dc8545d8b43a!2s500+NE+Chipman+Rd%2C+Lee&#39;s+Summit%2C+MO+64063%2C+USA!5e0!3m2!1sen!2sin!4v1446207355024" style="border:0"></iframe>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+               <h2 class="header_2 indent_5">
+                                Contact Info
+                            </h2>
+                            <address>
+                                <p class="text_8">
+                                    <strong>US Office</strong> <br/><br/>
+                                    <strong>Missouri</strong> <br/><br/>
+                                    500 NE Chipman Rd 9 <br/>
+                                    Lee’s Summit <br/>
+                                    Missouri –  64063 <br/><br/>
+                                    Tel : 513-485-6789 <br/>
+                                    Email: dan@brddata.com
+                                </p>
+                            </address>
+          </div>
+          <div class="col-sm-6">
+               <h2 class="header_2 indent_2">
+                                Contact Form
+                            </h2>
+                            <form id="contact-form">
+                                <div class="contact-form-loader"></div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="name">
+                                                <input type="text" name="name" placeholder="Name:" value=""
+                                                       data-constraints="@Required @JustLetters"/>
+                                                <span class="empty-message">*This field is required.</span>
+                                                <span class="error-message">*This is not a valid name.</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="email">
+                                                <input type="text" name="email" placeholder="E-mail:" value=""
+                                                       data-constraints="@Required @Email"/>
+                                                <span class="empty-message">*This field is required.</span>
+                                                <span class="error-message">*This is not a valid email.</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="phone">
+                                                <input type="text" name="phone" placeholder="Phone:" value=""
+                                                       data-constraints="@JustNumbers"/>
+                                                <span class="empty-message">*This field is required.</span>
+                                                <span class="error-message">*This is not a valid phone.</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="message">
+                                        <textarea name="message" placeholder="Message:"
+                                                  data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                                        <span class="empty-message">*This field is required.</span>
+                                        <span class="error-message">*The message is too short.</span>
+                                    </label>
+                                    <label class="recaptcha">
+                                      <div class="g-recaptcha" data-sitekey="6Le0EBATAAAAAK8Nqp2u3Ab8o64yLfIRp-BHLzC1"></div>
+                                      <span class="error-message">*Please verify captcha.</span>
+                                      <span class="empty-message">*Please verify captcha.</span>
+                                    </label>
+                                    <div class="btn-wrap">
+                                        <a class="bd-btn" href="#" data-type="reset">clear</a>
+                                        <a class="bd-btn" href="#" data-type="submit">send</a>
+                                    </div>
+                                </fieldset>
+                                <div class="modal fade response-message">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Modal title</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                You message has been sent! We will be in touch soon.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+          </div>
+      </div>
+  </section>
+  <footer>
+      <div class="container-fluid w90">
+          <p >
+            © <span id="bd-copyright-year">2015</span> | <a href="#">Privacy Policy</a> 
+            <span  class="bd-pull-right">
+                <a href="javascript:void(0)" class="bd-social-icons">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="javascript:void(0)" class="bd-social-icons">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="javascript:void(0)" class="bd-social-icons">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </span>
+
+           </p>
+      </div>
+  </footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src='js/modal.js'></script>
+<script src='js/TMForm.js'></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    setTimeout(function(){
+    var area = document.getElementById('g-recaptcha-response');
+    if (area.addEventListener) {
+      area.addEventListener('input', function() {
+        $('label.recaptcha').removeClass('empty');
+      }, false);
+    } else if (area.attachEvent) {
+      area.attachEvent('onpropertychange', function() {
+        $('label.recaptcha').removeClass('empty');
+      });
+    }
+  }, 2000)
+  });
+</script>
+</body>
+</html>
