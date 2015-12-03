@@ -1,7 +1,8 @@
 var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-    fs = require('fs');
+    fs = require('fs'),
+    striptags = require('striptags');
 
 
 
@@ -26,37 +27,33 @@ app.use(express.static(__dirname + '/'));
 app.use('/api/contacts', contactRouter); 
 
 app.use('/search', function(req, res){
-	var data = [];	
-	console.log( req.query );
-	function inspectFile(contents, file) {
-    if (contents.indexOf(req.query.searchString) != -1) {
-        // do something
-        console.log('I can find in' + file);
-       return {
-			fileName: file
-		};
-    }
-}
-	fs.readdir( __dirname + '/views', function(err, files) {
-		console.log(files)
-	    files
-	         .filter(function(file) { return file.substr(-5) === '.html'; })
-	         .forEach(function(file) { 
-	         	fs.readFile(file, 'utf-8', function(err, contents) { 	         		
-		         	if (contents.indexOf(req.query.searchString) != -1) {
-				        // do something
-				        console.log('I can find in' + file);
-				       data.push({
-							fileName: file
-						});
-				       
-				    }
-		          }); 
+	var data = [];
+	
+	fs.readdir( __dirname + '/views', function(err, files) {		
+	    files.forEach(function(file, idx) { 
+         	fs.readFile(__dirname + '/views/' +file, 'utf-8', function(err, contents) {
+         		
+         		if(contents){
+         			var start = contents.indexOf('<!--STARTSEARCH-->'),
+	         		    end = contents.indexOf('<!--ENDSEARCH-->'),
+	         		    searchIndex;
+	         			contents = contents.substring(start-18,end);
+	         			contents = striptags(contents);
+		         		searchIndex = contents.indexOf(req.query.searchString);
 
-	         	console.log('I am executing', data)
-	         	
-	    	 });
-	    	  
+			         	if (searchIndex != -1) {					         		 		        
+					        data.push({
+								fileName: file,
+								fileContent: contents.substr(searchIndex,500)
+							});				       
+					    }
+					    if(files.length-1 == idx) {
+					    	res.status(200).json(data);
+					    }
+         		}
+         	
+	        }); 
+    	 });	    	  
 	});
 
       

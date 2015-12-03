@@ -170,7 +170,21 @@ footer p{
   background: #249f9c;
   text-decoration: none;
 }
-.minHt{min-height:500px}
+.bd-search {
+  margin-left: 25%;
+  display: inline-block;
+}
+.bd-search .bd-btn {
+  font: 400 16px/24px 'Marvel', sans-serif;
+  border: none;
+  padding: 5px 20px;
+}
+.bd-search input {
+  padding: 5px 0;
+}
+.minHt {
+  min-height:500px
+}
 
 .icon-circle{
   display: inline-block;

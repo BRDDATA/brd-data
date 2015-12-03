@@ -197,10 +197,6 @@
               <i class="fa fa-google-plus"></i>
             </a> 
           </div>
-           <div ng-controller="bdSearchCtrl">              
-              <input type="text" ng-model="search" />
-              <button ng-click="searchMethod()">Search</button> 
-            </div>
         </div>
       </div>
       <br/>
@@ -210,6 +206,11 @@
           <p >
             © <span id="bd-copyright-year">2015</span> | <a href="#">Privacy Policy</a>           
             
+           <span ng-controller="bdSearchCtrl" class="bd-search">              
+              <input type="text" ng-model="search" />
+              <button ng-click="searchMethod()" class="bd-btn">Search</button> 
+            </span>
+
             <span  class="bd-pull-right">
                 <a href="javascript:void(0)" class="bd-social-icons">
                     <i class="fa fa-facebook"></i>
