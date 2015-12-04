@@ -16,14 +16,24 @@ bd.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$urlR
             templateUrl: 'cloud.html'
         })
 }]);
-bd.controller('bdSearchCtrl', function($scope,$http){
-    $scope.searchMethod = function(){
-        $http.get('/search',{
-    params: { searchString: $scope.search}
-}).then(function(){
-            console.log('success');
-        },function(err){
-            console.log(err);
-        })
+bd.controller('bdSearchCtrl', function($scope,$http,$location){    
+    $scope.searchMethod = function(searchString){
+        searchString = searchString || $location.search().q;
+        if(searchString){
+             $http.get('/search',{
+                params: { searchString: searchString}
+            }).then(function(response){
+                $scope.searchResult = response.data;
+            },function(err){
+                console.log(err);
+            })
+        }
+       
+    }
+    $scope.searchMethod();
+    $scope.showSearch = false;
+    $scope.toggle = function(){
+        console.log('called');
+        $scope.showSearch = !$scope.showSearch;
     }
 })

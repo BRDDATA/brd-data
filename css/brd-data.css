@@ -170,14 +170,21 @@ footer p{
   background: #249f9c;
   text-decoration: none;
 }
-.bd-search {
-  margin-left: 25%;
-  display: inline-block;
+.bd-search {  
+  position: absolute;
+  width: 232px;
+  right: 0; 
+  padding: 5px;
+  background: #035BAA;
+}
+.navbar-default .navbar-nav > li > a.bd-bg{
+  background: #035BAA;
+  color: #fff;
 }
 .bd-search .bd-btn {
   font: 400 16px/24px 'Marvel', sans-serif;
   border: none;
-  padding: 5px 20px;
+  padding: 5px;
 }
 .bd-search input {
   padding: 5px 0;
@@ -272,4 +279,11 @@ footer p{
 .bd-social-icons a:hover {
   background: #129894;
   text-decoration: none;
+}
+.bd-search-elm{
+  position: relative;
+}
+.navbar-default .navbar-nav > li.bd-search-elm  > a:hover:after {
+  height: 0;
+  content: '';
 }
