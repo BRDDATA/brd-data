@@ -287,3 +287,21 @@ footer p{
   height: 0;
   content: '';
 }
+.bd-home-widget {
+  padding: 50px 30px 50px 60px;
+  border: 1px solid #898888;
+}
+.bd-home-widget .media-left{
+  padding-right: 60px;
+}
+.bd-home-widget h4 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.bd-home-widget p {
+  font-size: 17px;  
+  line-height: 24px;
+  margin-bottom: 20px;
+}
