@@ -74,6 +74,9 @@ section{
 		width: 90%;
 	}
  }
+ .bd-search-elm-mob{
+    display: none;
+  }
  @media (max-width: 768px) { 
   .navbar-fixed-top{
     position: relative;
@@ -106,6 +109,12 @@ section{
   }
   .bd-next:before{
       padding-left: 5px;
+  }
+  .bd-search-elm-mob{
+    display: block;
+  }
+  .nav > li.bd-search-elm{
+    display: none;
   }
  }
  .bd-portfolio a img{
@@ -188,6 +197,17 @@ footer p{
 }
 .bd-search input {
   padding: 5px 0;
+}
+.bd-search-elm-mob.bd-search{
+  position: static;
+  width: 100%;
+}
+.bd-search-elm-mob.bd-search input{
+  width: 79%;
+  padding: 2px;
+}
+.bd-search-elm-mob.bd-search .bd-btn {
+  padding: 1px 5px;
 }
 .minHt {
   min-height:500px
@@ -290,6 +310,7 @@ footer p{
 .bd-home-widget {
   padding: 50px 30px 50px 60px;
   border: 1px solid #898888;
+  margin-bottom: 50px;
 }
 .bd-home-widget .media-left{
   padding-right: 60px;
@@ -304,4 +325,30 @@ footer p{
   font-size: 17px;  
   line-height: 24px;
   margin-bottom: 20px;
+}
+.bd-getintouch-section {
+    padding-bottom: 22px;
+}
+.bd-getintouch-section h2{
+    padding-bottom: 34px;
+    margin: 0;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 67px;
+  
+}
+.bd-search-result h3 {
+  text-transform: capitalize;
 }

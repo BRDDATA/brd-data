@@ -14,8 +14,12 @@
 </head>
 <body ng-controller="bdSearchCtrl">
     <header>  
-    <nav class="navbar navbar-default navbar-fixed-top" id="bd-nav-bar-parent">      
-      <div class="container-fluid w90">
+    <nav class="navbar navbar-default navbar-fixed-top" id="bd-nav-bar-parent"> 
+      <div class="container-fluid bd-search-elm-mob bd-search">
+        <input type="text" ng-model="search" />
+        <a href="search.html#?q={{search}}" class="bd-btn">Search</a>
+      </div>     
+      <div class="container-fluid w90">        
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bd-nav-bar" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -36,7 +40,7 @@
              <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Services
               <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu"> 
                 <li><a href="services.html#/business-intelligence">Business Intelligence</a></li>
                 <li><a href="services.html#/data-warehousing">Data warehousing</a></li>
                 <li><a href="services.html#/cloud">Cloud</a></li> 
@@ -151,13 +155,13 @@
       <div class="row">
         <div class="col-md-6 col-xs-12">
         <div class="bd-home-widget">
-            <div class="media">
-              <div class="media-left media-middle">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 
                   <img src="images/index_img01.png" alt="Image 1">
                 
               </div>
-              <div class="media-body">
+              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <h4 class="media-heading">Middle aligned media</h4>
                 <p>
                  Vivamus at magna non nunc tristique rhoncus. Aliquam nibh ante, egestas id dictum a, commodo luctus libero. 
@@ -169,13 +173,13 @@
         </div>
         <div class="col-md-6 col-xs-12">
           <div class="bd-home-widget">
-            <div class="media">
-              <div class="media-left media-middle">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 
                   <img src="images/index_img02.png" alt="Image 1">
                 
               </div>
-              <div class="media-body">
+              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <h4 class="media-heading">Middle aligned media</h4>
                 <p>
                  Vivamus at magna non nunc tristique rhoncus. Aliquam nibh ante, egestas id dictum a, commodo luctus libero. 
@@ -218,7 +222,7 @@
       </div>
       
       <div class="row">
-        <div class="col-md-12 col-xs-12 bd-subcontent">
+        <div class="col-md-12 col-xs-12 bd-subcontent bd-getintouch-section">
           <h2 class="bd-subheader">Get in Touch</h2>          
           <div class="bd-social-icons">
             <a href="#">
@@ -235,15 +239,12 @@
       </div>
       <br/>
   </section>
-  <footer >
+  <footer>
       <div class="container-fluid w90">
           <p >
             © <span id="bd-copyright-year">2015</span> | <a href="#">Privacy Policy</a>           
             
-           <span ng-controller="bdSearchCtrl" class="bd-search">              
-              <input type="text" ng-model="search" />
-              <a href="search.html#?q={{search}}" class="bd-btn">Search</a> 
-            </span>
+           
 
             <span  class="bd-pull-right">
                 <a href="javascript:void(0)" class="bd-social-icons">
