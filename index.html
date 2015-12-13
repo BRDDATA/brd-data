@@ -15,10 +15,7 @@
 <body ng-controller="bdSearchCtrl">
     <header>  
     <nav class="navbar navbar-default navbar-fixed-top" id="bd-nav-bar-parent"> 
-      <div class="container-fluid bd-search-elm-mob bd-search">
-        <input type="text" ng-model="search" />
-        <a href="search.html#?q={{search}}" class="bd-btn">Search</a>
-      </div>     
+           
       <div class="container-fluid w90">        
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bd-nav-bar" aria-expanded="false">
@@ -52,17 +49,7 @@
             <li>
                 <a href="aboutus.html">About Us</a>
             </li>  
-            <li><a href="contactus.html">Contact Us </a></li>
-            <li class="bd-search-elm">
-                 <a href="javascript:void(0)" ng-click="toggle()" ng-class="{'bd-bg':showSearch}">
-                    <i class="fa fa-search"></i>
-                  </a>                        
-                  <div ng-show="showSearch" class="bd-search">                             
-                      <input type="text" ng-model="search" />
-                      <a href="search.html#?q={{search}}" class="bd-btn">Search</a> 
-                  </div>
-               
-            </li>
+            <li><a href="contactus.html">Contact Us </a></li>           
           </ul>
           </div>
       </div>

@@ -26,41 +26,7 @@ app.use('/', express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/'));
 app.use('/api/contacts', contactRouter); 
 
-app.use('/search', function(req, res){
-	var data = [];
-	var getName = function(name){		
-		return name.slice(0,-5).replace('-',' ');
-	}
-	fs.readdir( __dirname + '/views', function(err, files) {		
-	    files.forEach(function(file, idx) { 
-         	fs.readFile(__dirname + '/views/' +file, 'utf-8', function(err, contents) {
-         		
-         		if(contents){
-         			var start = contents.indexOf('<!--STARTSEARCH-->'),
-	         		    end = contents.indexOf('<!--ENDSEARCH-->'),
-	         		    searchIndex;
-	         			contents = contents.substring(start-18,end);
-	         			contents = striptags(contents);
-		         		searchIndex = contents.indexOf(req.query.searchString);
 
-			         	if (searchIndex != -1) {					         		 		        
-					        data.push({
-								fileName: getName(file),
-								link: file,
-								fileContent: contents.substr(searchIndex,500)
-							});				       
-					    }
-					    if(files.length-1 == idx) {
-					    	res.status(200).json(data);
-					    }
-         		}
-         	
-	        }); 
-    	 });	    	  
-	});
-
-      
-})
 
 app.listen(port, function(){
     console.log('Running my app on  PORT: ' + port);
