@@ -1,8 +1,12 @@
 var bd = angular.module('bd', ['ui.router']);
 bd.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$urlRouterProvider) {
-	$urlRouterProvider.otherwise('/business-intelligence');
+    $urlRouterProvider.otherwise('/home');
     
     $stateProvider
+        .state('home', {
+            url: '/home',
+            templateUrl: 'service_home.html'
+        })
         .state('business-intelligence', {
             url: '/business-intelligence',
             templateUrl: 'business-intelligence.html'
@@ -15,4 +19,4 @@ bd.config(['$stateProvider','$urlRouterProvider', function ($stateProvider,$urlR
             url: '/cloud',
             templateUrl: 'cloud.html'
         })
-}])
+}]);

@@ -73,6 +73,18 @@ section{
 	.w90{
 		width: 90%;
 	}
+
+.dropdown:hover .dropdown-menu {    
+    display: block; 
+    margin-top: 0; // remove the gap so it doesn't close
+   
+ }
+ .nav > li.bd-lg{
+  display: block;
+ }
+ .nav > li.bd-sm{
+  display: none;
+ }
  }
  .bd-search-elm-mob{
     display: none;
@@ -116,6 +128,15 @@ section{
   .nav > li.bd-search-elm{
     display: none;
   }
+  .nav > li.bd-lg{
+    display: none;
+   }
+   .nav > li.bd-sm{
+    display: block;
+   }
+   .bd-sm-notopmargin{
+    margin-top: 0;
+   }
  }
  .bd-portfolio a img{
  	width: 100%;
@@ -239,14 +260,8 @@ footer p{
 }
 
 
-.dropdown:hover .dropdown-menu {    
-    display: block; 
-    margin-top: 0; // remove the gap so it doesn't close
-   
- }
- .bd-breadcrumb {
-  
-  padding: 10px 0;
+ .bd-breadcrumb {  
+      padding: 10px 15px;
  }
  .bd-breadcrumb a { 
     color: #337ab7;
@@ -351,4 +366,15 @@ footer {
 }
 .bd-search-result h3 {
   text-transform: capitalize;
+}
+
+.bd-breadcrumb .active{
+  text-transform: capitalize;
+}
+.bd-svc-home{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.main-content {
+  padding-bottom: 20px;
 }

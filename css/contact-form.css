@@ -308,8 +308,8 @@ a {
     color: #413d3d;
     background: #f1f045;
 }
-.mrgBtm20px {
-  margin-bottom: 20px;
+.padBtm20px {
+  padding-bottom: 20px;
 }
 #contact-form label.recaptcha {
   max-width: inherit;
